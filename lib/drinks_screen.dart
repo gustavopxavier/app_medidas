@@ -1,19 +1,11 @@
-import 'package:app_medidas/home_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: HomeScreen(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
-
-class Home extends StatefulWidget {
+class DrinksScreen extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _DrinksScreenState createState() => _DrinksScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _DrinksScreenState extends State<DrinksScreen> {
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
 
@@ -74,7 +66,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Calculadora de Preços"),
+          title: Text(""),
           centerTitle: true,
           backgroundColor: Colors.green,
           actions: <Widget>[
