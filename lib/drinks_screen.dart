@@ -68,7 +68,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
         appBar: AppBar(
           title: Text(""),
           centerTitle: true,
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.refresh),
@@ -84,15 +84,18 @@ class _DrinksScreenState extends State<DrinksScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(Icons.sports_bar,
-                      size: 100.0, color: Colors.yellowAccent[700]),
+                  Icon(
+                    Icons.wine_bar,
+                    size: 70.0,
+                    color: Colors.lightBlue,
+                  ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         labelText: "Mililitros (ml)",
-                        labelStyle: TextStyle(color: Colors.green)),
+                        labelStyle: TextStyle(color: Colors.lightBlue)),
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 14.0),
                     controller: weightController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -104,9 +107,9 @@ class _DrinksScreenState extends State<DrinksScreen> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         labelText: "Preço (R\$)",
-                        labelStyle: TextStyle(color: Colors.green)),
+                        labelStyle: TextStyle(color: Colors.lightBlue)),
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 14.0),
                     controller: heightController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -128,44 +131,44 @@ class _DrinksScreenState extends State<DrinksScreen> {
                           "Calcular",
                           style: TextStyle(color: Colors.white, fontSize: 25.0),
                         ),
-                        color: Colors.green,
+                        color: Colors.lightBlue,
                       ),
                     ),
                   ),
                   Text(
                     _infoText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     piriguete,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     vidro_Pequena,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     latinha,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     lata_Media,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     garrafa_Normal,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                   Text(
                     garrafa_Litrao,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 25.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
                   ),
                 ],
               )),
