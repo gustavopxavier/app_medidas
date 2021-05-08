@@ -80,129 +80,260 @@ class _FoodScreenState extends State<FoodScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
-      child: Scaffold(
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
           backgroundColor: Colors.white,
-          body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-            child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Icon(
-                      Icons.food_bank,
-                      size: 70.0,
-                      color: Colors.lightBlue,
-                    ),
-                    TextFormField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: "Gramas (g)",
-                        labelStyle: TextStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
+          actions: [
+            IconButton(
+                icon: Icon(Icons.refresh),
+                color: Colors.lightBlue,
+                onPressed: _resetFields)
+          ],
+        ),
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+          child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Icon(
+                    Icons.food_bank,
+                    size: 70.0,
+                    color: Colors.lightBlue,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: "Gramas (g)",
+                      labelStyle: TextStyle(
                         color: Colors.blue,
-                        fontSize: 14.0,
                       ),
-                      controller: weightController,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return "Insira a quantidade em gramas (grama)";
-                        }
-                      },
                     ),
-                    TextFormField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: "Preço (R\$)",
-                        labelStyle: TextStyle(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 14.0,
+                    ),
+                    controller: weightController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Insira a quantidade em gramas (grama)";
+                      }
+                    },
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: "Preço (R\$)",
+                      labelStyle: TextStyle(
                         color: Colors.blue,
-                        fontSize: 14.0,
                       ),
-                      controller: priceController,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return "Insira o Preço (R\$)";
-                        }
-                      },
                     ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 14.0,
+                    ),
+                    controller: priceController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Insira o Preço (R\$)";
+                      }
+                    },
+                  ),
 
 //////////////////////////// BOTÃO CALCULAR ////////////////////////
-                    ///
-                    Padding(
-                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                      child: Container(
-                        height: 50.0,
-                        child: TextButton.icon(
-                          icon: Icon(
-                            Icons.calculate,
-                            size: 30,
-                          ),
-                          label: Text('Calcular'),
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.lightBlue,
-                            ),
-                            foregroundColor: MaterialStateProperty.all(
-                              Colors.white,
-                            ),
-                          ),
-                          onPressed: () {
-                            if (_formKey.currentState.validate()) {
-                              _calculateImc();
-                            }
-                          },
+                  ///
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: Container(
+                      height: 50.0,
+                      child: TextButton.icon(
+                        icon: Icon(
+                          Icons.calculate,
+                          size: 30,
                         ),
+                        label: Text('Calcular'),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            Colors.lightBlue,
+                          ),
+                          foregroundColor: MaterialStateProperty.all(
+                            Colors.white,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            _calculateImc();
+                          }
+                        },
                       ),
                     ),
-                    Text(
-                      _infoText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    height: 220,
+                    width: double.maxFinite,
+                    child: ListView(
+                      children: [
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(duzentos_gramas),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(Trezentos_Gramas),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(Quinhentos_Gramas),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(Oitocentos_Gramas),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(Um_Quilo),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(Dois_Quilos),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      duzentos_gramas,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                    Text(
-                      Trezentos_Gramas,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                    Text(
-                      Quinhentos_Gramas,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                    Text(
-                      Oitocentos_Gramas,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                    Text(
-                      Um_Quilo,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                    Text(
-                      Dois_Quilos,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.blue, fontSize: 18.0),
-                    ),
-                  ],
-                )),
-          )),
-    );
+                  ),
+                ],
+              )),
+        ));
   }
 }
