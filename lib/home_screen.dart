@@ -11,6 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -28,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             title: Text('Compare seus produtos'),
+            centerTitle: true,
           ),
           body: TabBarView(
             children: [

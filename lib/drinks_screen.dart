@@ -34,44 +34,51 @@ class _DrinksScreenState extends State<DrinksScreen> {
   }
 
   void _calculateImc() {
-    setState(() {
-      double weight = double.parse(weightController.text);
-      double height = double.parse(heightController.text);
+    setState(
+      () {
+        double weight = double.parse(weightController.text);
+        double height = double.parse(heightController.text);
 
-      // double imc = weight / (height * height);
+        // double imc = weight / (height * height);
 
-      double um_Ml = height / weight;
-      double calc_Piriguete = um_Ml * 269;
-      double calc_Vidro_Pequena = um_Ml * 330; // Garrafa de vidro 330ml
-      double calc_Latinha = um_Ml * 350; // Latinha de 350ml
-      double calc_Lata_Media = um_Ml * 473; // Lata de 473ml
-      double calc_Garrafa_Normal = um_Ml * 600; // Garrafa de vidro 600ml
-      double calc_Garrafa_Litrao = um_Ml * 1000; // Garrafa de um litro
+        double um_Ml = height / weight;
+        double calc_Piriguete = um_Ml * 269;
+        double calc_Vidro_Pequena = um_Ml * 330; // Garrafa de vidro 330ml
+        double calc_Latinha = um_Ml * 350; // Latinha de 350ml
+        double calc_Lata_Media = um_Ml * 473; // Lata de 473ml
+        double calc_Garrafa_Normal = um_Ml * 600; // Garrafa de vidro 600ml
+        double calc_Garrafa_Litrao = um_Ml * 1000; // Garrafa de um litro
 
-      _infoText = "";
-      piriguete =
-          "Garrafa (269ml): R\$ ${calc_Piriguete.toStringAsPrecision(3)}";
-      vidro_Pequena =
-          "Garrafa (330ml): R\$ ${calc_Vidro_Pequena.toStringAsPrecision(2)}";
-      latinha = "Lata(350ml): R\$ ${calc_Latinha.toStringAsPrecision(2)}";
-      lata_Media = "Lata(473ml): R\$ ${calc_Lata_Media.toStringAsPrecision(2)}";
-      garrafa_Normal =
-          "Garrafa(600ml): R\$ ${calc_Garrafa_Normal.toStringAsPrecision(2)}";
-      garrafa_Litrao =
-          "Garrafa(1l): R\$ ${calc_Garrafa_Litrao.toStringAsPrecision(2)}";
-    });
+        _infoText = "";
+        piriguete =
+            "Produto (269ml): R\$ ${calc_Piriguete.toStringAsPrecision(3)}";
+        vidro_Pequena =
+            "Produto (330ml): R\$ ${calc_Vidro_Pequena.toStringAsPrecision(2)}";
+        latinha = "Produto (350ml): R\$ ${calc_Latinha.toStringAsPrecision(2)}";
+        lata_Media =
+            "Produto (473ml): R\$ ${calc_Lata_Media.toStringAsPrecision(2)}";
+        garrafa_Normal =
+            "Produto (600ml): R\$ ${calc_Garrafa_Normal.toStringAsPrecision(2)}";
+        garrafa_Litrao =
+            "Produto (1l): R\$ ${calc_Garrafa_Litrao.toStringAsPrecision(2)}";
+
+        // teste();
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(""),
+          elevation: 0.0,
+          title: Text("teste"),
           centerTitle: true,
           backgroundColor: Colors.white,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.refresh),
+              color: Colors.lightBlue,
               onPressed: _resetFields,
             )
           ],
@@ -95,7 +102,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                         labelText: "Mililitros (ml)",
                         labelStyle: TextStyle(color: Colors.lightBlue)),
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 14.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 12.0),
                     controller: weightController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -106,10 +113,13 @@ class _DrinksScreenState extends State<DrinksScreen> {
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        labelText: "Preço (R\$)",
-                        labelStyle: TextStyle(color: Colors.lightBlue)),
+                      labelText: "Preço (R\$)",
+                      labelStyle: TextStyle(
+                        color: Colors.lightBlue,
+                      ),
+                    ),
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 14.0),
+                    style: TextStyle(color: Colors.lightBlue, fontSize: 12.0),
                     controller: heightController,
                     validator: (value) {
                       if (value.isEmpty) {
@@ -135,43 +145,201 @@ class _DrinksScreenState extends State<DrinksScreen> {
                       ),
                     ),
                   ),
-                  Text(
-                    _infoText,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    piriguete,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    vidro_Pequena,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    latinha,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    lata_Media,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    garrafa_Normal,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
-                  Text(
-                    garrafa_Litrao,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.lightBlue, fontSize: 25.0),
-                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    height: 220,
+                    width: double.maxFinite,
+                    child: ListView(
+                      children: [
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(piriguete),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(vidro_Pequena),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(latinha),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(lata_Media),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(garrafa_Normal),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(garrafa_Litrao),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Card(
+                          elevation: 0.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(7),
+                            child: Stack(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 5,
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(piriguete),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               )),
         ));
   }
+}
+
+Widget teste() {
+  return Align(
+    alignment: Alignment.centerLeft,
+    child: RichText(
+      text: TextSpan(text: 'Testando card'),
+    ),
+  );
 }
