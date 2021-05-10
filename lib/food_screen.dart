@@ -1,5 +1,6 @@
 import 'package:app_medidas/calculos/calc_foods.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FoodScreen extends StatefulWidget {
   @override
@@ -156,7 +157,10 @@ class _FoodScreenState extends State<FoodScreen> {
                           Icons.calculate,
                           size: 30,
                         ),
-                        label: Text('Calcular'),
+                        label: Text(
+                          'Calcular',
+                          style: GoogleFonts.oswald(fontSize: 20.0),
+                        ),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
                             Colors.lightBlue,
