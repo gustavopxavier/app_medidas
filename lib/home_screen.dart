@@ -1,6 +1,7 @@
 import 'package:app_medidas/drinks_screen.dart';
 import 'package:app_medidas/food_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Aplicativo Medidas',
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -28,7 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            title: Text('Compare seus produtos'),
+            title: Text(
+              'Compare seus produtos',
+              style: GoogleFonts.oswald(),
+            ),
             centerTitle: true,
           ),
           body: TabBarView(

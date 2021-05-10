@@ -12,22 +12,22 @@ class _DrinksScreenState extends State<DrinksScreen> {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String dois_Meia_Nove = "";
-  String tres_Tres_Zero = "";
-  String tres_Cinco_Zero = "";
-  String quatro_Sete_Tres = "";
-  String seis_Seis_Zero = "";
+  String doisMeiaNove = "";
+  String tresTresZero = "";
+  String tresCincoZero = "";
+  String quatroSeteTres = "";
+  String seisSeisZero = "";
   String Hum_mil = "";
 
   void _resetFields() {
     weightController.text = "";
     priceController.text = "";
     setState(() {
-      dois_Meia_Nove = "";
-      tres_Tres_Zero = "";
-      tres_Cinco_Zero = "";
-      quatro_Sete_Tres = "";
-      seis_Seis_Zero = "";
+      doisMeiaNove = "";
+      tresTresZero = "";
+      tresCincoZero = "";
+      quatroSeteTres = "";
+      seisSeisZero = "";
       Hum_mil = "";
     });
   }
@@ -41,23 +41,23 @@ class _DrinksScreenState extends State<DrinksScreen> {
         // double imc = weight / (price * price);
 
         double um_Ml = price / weight;
-        double calc_dois_Meia_Nove = um_Ml * 269;
-        double calc_tres_Tres_Zero = um_Ml * 330; // Garrafa de vidro 330ml
-        double calc_tres_Cinco_Zero = um_Ml * 350; // tres_Cinco_Zero de 350ml
-        double calc_quatro_Sete_Tres = um_Ml * 473; // Lata de 473ml
-        double calc_seis_Seis_Zero = um_Ml * 600; // Garrafa de vidro 600ml
+        double calc_doisMeiaNove = um_Ml * 269;
+        double calc_tresTresZero = um_Ml * 330; // Garrafa de vidro 330ml
+        double calc_tresCincoZero = um_Ml * 350; // tresCincoZero de 350ml
+        double calc_quatroSeteTres = um_Ml * 473; // Lata de 473ml
+        double calc_seisSeisZero = um_Ml * 600; // Garrafa de vidro 600ml
         double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
 
-        dois_Meia_Nove =
-            "Produto (269ml): R\$ ${calc_dois_Meia_Nove.toStringAsPrecision(2)}";
-        tres_Tres_Zero =
-            "Produto (330ml): R\$ ${calc_tres_Tres_Zero.toStringAsPrecision(2)}";
-        tres_Cinco_Zero =
-            "Produto (350ml): R\$ ${calc_tres_Cinco_Zero.toStringAsPrecision(2)}";
-        quatro_Sete_Tres =
-            "Produto (473ml): R\$ ${calc_quatro_Sete_Tres.toStringAsPrecision(2)}";
-        seis_Seis_Zero =
-            "Produto (600ml): R\$ ${calc_seis_Seis_Zero.toStringAsPrecision(3)}";
+        doisMeiaNove =
+            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsPrecision(2)}";
+        tresTresZero =
+            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsPrecision(2)}";
+        tresCincoZero =
+            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsPrecision(2)}";
+        quatroSeteTres =
+            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsPrecision(2)}";
+        seisSeisZero =
+            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsPrecision(3)}";
         Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsPrecision(3)}";
 
         // teste();
@@ -97,8 +97,9 @@ class _DrinksScreenState extends State<DrinksScreen> {
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    labelText: "Mililitros (ml)",
-                    labelStyle: TextStyle(color: Colors.lightBlue)),
+                  labelText: "Mililitros (ml)",
+                  labelStyle: TextStyle(color: Colors.lightBlue),
+                ),
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.lightBlue, fontSize: 12.0),
                 controller: weightController,
@@ -175,7 +176,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text(dois_Meia_Nove),
+                                      Text(doisMeiaNove),
                                     ],
                                   )
                                 ],
@@ -200,7 +201,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text(tres_Tres_Zero),
+                                      Text(tresTresZero),
                                     ],
                                   )
                                 ],
@@ -225,7 +226,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text(tres_Cinco_Zero),
+                                      Text(tresCincoZero),
                                     ],
                                   )
                                 ],
@@ -250,7 +251,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text(quatro_Sete_Tres),
+                                      Text(quatroSeteTres),
                                     ],
                                   )
                                 ],
@@ -275,7 +276,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text(seis_Seis_Zero),
+                                      Text(seisSeisZero),
                                     ],
                                   )
                                 ],
