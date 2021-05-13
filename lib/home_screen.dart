@@ -3,6 +3,8 @@ import 'package:app_medidas/food_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// var textBebidas = Text('Bebidas', style: GoogleFonts.oswald());
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();

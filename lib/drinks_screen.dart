@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -49,16 +51,16 @@ class _DrinksScreenState extends State<DrinksScreen> {
         double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
 
         doisMeiaNove =
-            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsPrecision(2)}";
+            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsFixed(2)}";
         tresTresZero =
-            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsPrecision(2)}";
+            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsFixed(2)}";
         tresCincoZero =
-            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsPrecision(2)}";
+            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsFixed(2)}";
         quatroSeteTres =
-            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsPrecision(2)}";
+            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsFixed(2)}";
         seisSeisZero =
-            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsPrecision(3)}";
-        Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsPrecision(3)}";
+            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsFixed(2)}";
+        Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsFixed(2)}";
 
         // teste();
       },

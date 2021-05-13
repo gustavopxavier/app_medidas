@@ -61,21 +61,21 @@ class _FoodScreenState extends State<FoodScreen> {
       _infoText = "";
 
       duzentos_gramas =
-          "Embalagem (200g): R\$ ${calc_Duzentos_Gramas.toStringAsPrecision(3)}";
+          "Embalagem (200g): R\$ ${calc_Duzentos_Gramas.toStringAsFixed(2)}";
 
       Trezentos_Gramas =
-          "Embalagem (300g): R\$ ${calc_Trezentos_Gramas.toStringAsPrecision(3)}";
+          "Embalagem (300g): R\$ ${calc_Trezentos_Gramas.toStringAsFixed(2)}";
 
       Quinhentos_Gramas =
-          "Embalagem(500g): R\$ ${calc_Quinhentos_Gramas.toStringAsPrecision(3)}";
+          "Embalagem(500g): R\$ ${calc_Quinhentos_Gramas.toStringAsFixed(2)}";
 
       Oitocentos_Gramas =
-          "Embalagem(800g): R\$ ${calc_Oitocentos_Gramas.toStringAsPrecision(3)}";
+          "Embalagem(800g): R\$ ${calc_Oitocentos_Gramas.toStringAsFixed(2)}";
 
-      Um_Quilo = "Embalagem(1 Kg): R\$ ${calc_Um_Quilo.toStringAsPrecision(4)}";
+      Um_Quilo = "Embalagem(1 Kg): R\$ ${calc_Um_Quilo.toStringAsFixed(2)}";
 
       Dois_Quilos =
-          "Embalagem(2 kg): R\$ ${calc_Dois_Quilos.toStringAsPrecision(4)}";
+          "Embalagem(2 kg): R\$ ${calc_Dois_Quilos.toStringAsFixed(2)}";
     });
   }
 
