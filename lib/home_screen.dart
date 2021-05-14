@@ -20,6 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            title: Text(
+              'Compare seus produtos',
+              style: GoogleFonts.oswald(),
+            ),
+            centerTitle: true,
             bottom: TabBar(
               tabs: [
                 Tab(
@@ -31,12 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(Icons.account_balance),
                 ),
               ],
+              // indicator: ShapeDecoration(
+              //     shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.only(
+              //   topRight: Radius.circular(200.0),
+              //   topLeft: Radius.circular(200.0),
+              // ))),
             ),
-            title: Text(
-              'Compare seus produtos',
-              style: GoogleFonts.oswald(),
-            ),
-            centerTitle: true,
           ),
           body: TabBarView(
             children: [
