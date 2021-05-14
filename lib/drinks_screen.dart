@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DrinksScreen extends StatefulWidget {
@@ -85,7 +86,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+        padding: EdgeInsets.fromLTRB(100.0, 0.0, 100.0, 0.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -93,18 +94,29 @@ class _DrinksScreenState extends State<DrinksScreen> {
             children: <Widget>[
               Icon(
                 Icons.wine_bar,
-                size: 70.0,
+                size: 40.0,
                 color: Colors.lightBlue,
+              ),
+              SizedBox(
+                height: 30.0,
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
+                  icon: Icon(Icons.liquor),
+                  hintText: 'Digite a quantidade de ml',
                   labelText: "Mililitros (ml)",
                   labelStyle: TextStyle(color: Colors.lightBlue),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.lightBlue, fontSize: 12.0),
+                style: TextStyle(
+                  color: Colors.lightBlue,
+                  fontSize: 12.0,
+                ),
                 controller: weightController,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Insira quantos mililitros (ml)";
@@ -114,19 +126,30 @@ class _DrinksScreenState extends State<DrinksScreen> {
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
+                  icon: Icon(Icons.monetization_on),
+                  hintText: 'Digite o preço do produto',
                   labelText: "Preço (R\$)",
                   labelStyle: TextStyle(
                     color: Colors.lightBlue,
                   ),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.lightBlue, fontSize: 12.0),
+                style: TextStyle(
+                  color: Colors.lightBlue,
+                  fontSize: 12.0,
+                ),
                 controller: priceController,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 validator: (value) {
                   if (value.isEmpty) {
                     return "Insira o Preço (R\$)";
                   }
                 },
+              ),
+              SizedBox(
+                height: 30.0,
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),

@@ -1,5 +1,6 @@
 import 'package:app_medidas/calculos/calc_foods.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FoodScreen extends StatefulWidget {
@@ -102,12 +103,17 @@ class _FoodScreenState extends State<FoodScreen> {
                 children: <Widget>[
                   Icon(
                     Icons.food_bank,
-                    size: 70.0,
+                    size: 40.0,
                     color: Colors.lightBlue,
+                  ),
+                  SizedBox(
+                    height: 30.0,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
+                      icon: Icon(Icons.local_grocery_store_sharp),
+                      hintText: 'Digite o peso do produto (gramas)',
                       labelText: "Gramas (g)",
                       labelStyle: TextStyle(
                         color: Colors.blue,
@@ -116,18 +122,23 @@ class _FoodScreenState extends State<FoodScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 14.0,
+                      fontSize: 12.0,
                     ),
                     controller: weightController,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
                     validator: (value) {
                       if (value.isEmpty) {
-                        return "Insira a quantidade em gramas (grama)";
+                        return 'Insira a quantidade em gramas (grama)';
                       }
                     },
                   ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
+                      icon: Icon(Icons.monetization_on_outlined),
+                      hintText: 'Digite o preço do produto',
                       labelText: "Preço (R\$)",
                       labelStyle: TextStyle(
                         color: Colors.blue,
@@ -136,14 +147,20 @@ class _FoodScreenState extends State<FoodScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.blue,
-                      fontSize: 14.0,
+                      fontSize: 12.0,
                     ),
                     controller: priceController,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly
+                    ],
                     validator: (value) {
                       if (value.isEmpty) {
                         return "Insira o Preço (R\$)";
                       }
                     },
+                  ),
+                  SizedBox(
+                    height: 30.0,
                   ),
 
 //////////////////////////// BOTÃO CALCULAR ////////////////////////
