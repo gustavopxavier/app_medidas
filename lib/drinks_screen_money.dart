@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
 void main() => runApp(DrinksScreenMoney());
@@ -31,8 +32,9 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
         appBar: AppBar(
           title: const Text('MoneyTextFormField Demo'),
         ),
+        ////////////////////Floating action button //////////////////
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.save),
+          child: Icon(Icons.calculate),
           onPressed: () {
             print(longCtrl.text);
             print(compactCtrl.text);
@@ -40,13 +42,16 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
           },
         ),
         body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 40.0),
           child: ConstrainedBox(
             constraints: BoxConstraints(),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SizedBox(height: 30),
                 _campoMililitros(),
                 _campoPreco(),
+                _botaoCalcular(),
               ],
             ),
           ),
@@ -88,6 +93,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
     );
   }
 
+////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
     TextStyle _ts = TextStyle(fontSize: 26.0);
     var _real = 'R\$';
@@ -110,6 +116,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
     );
   }
 
+///////////////////// CALCULATE //////////////////////
   void _calculate() {
     setState(
       () {
@@ -153,9 +160,45 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
       },
     );
   }
+/////////////////////////BOTÃO CALCULAR//////////////////////
+
+  Widget _botaoCalcular() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+      child: Container(
+        height: 50.0,
+        child: TextButton.icon(
+          icon: Icon(
+            Icons.calculate,
+            size: 30,
+          ),
+          label: Text(
+            'Calcular',
+            style: GoogleFonts.oswald(fontSize: 20.0),
+          ),
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(
+              Colors.lightBlue,
+            ),
+            foregroundColor: MaterialStateProperty.all(
+              Colors.white,
+            ),
+          ),
+          onPressed: () {
+            print('Clicou no botão calcular');
+            _calculate();
+            // if (_formKey.currentState.validate()) {
+            //   _calculateImc();
+            // }
+          },
+        ),
+      ),
+    );
+  }
 }
 
-/////////////////////////CONFIGURAÇÃO DE BORDAS
+/////////////////////////CONFIGURAÇÃO DE BORDAS//////////////
+
 _roundedInputDecoration() {
   final _inputFieldHeight = 60.0;
 
