@@ -16,6 +16,7 @@ class DrinksScreenTest extends StatefulWidget {
 class _DrinksScreenState extends State<DrinksScreenTest> {
   TextEditingController weightController = TextEditingController();
   TextEditingController priceController = TextEditingController();
+  var soma = MoneyMaskedTextController(precision: 2);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -26,6 +27,8 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
   String seisSeisZero = "";
   String Hum_mil = "";
 
+  String bebida;
+  String preco;
   // void _resetFields() {
   //   weightController.text = "";
   //   priceController.text = "";
@@ -46,7 +49,7 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
         initialValue: 0,
         decimalSeparator: ',',
         thousandSeparator: '.',
-        // leftSymbol: 'R\$',
+        leftSymbol: 'R\$',
         precision: 2);
 
     // priceController.updateValue(123.34);
@@ -68,7 +71,10 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
         // color: Colors.lightBlue,
         fontSize: 12.0,
       ),
-      controller: priceController,
+      controller: priceControl,
+      onChanged: (value) {
+        preco = value;
+      },
       inputFormatters: <TextInputFormatter>[
         FilteringTextInputFormatter.digitsOnly,
         // RealInputFormatter(centavos: true),
@@ -76,46 +82,59 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
       validator: (value) {
         if (value.isEmpty) {
           return "Insira o Preço (R\$)";
+        } else {
+          //TODO! acima voce valida o forme
+          //mas aqui em baixo tem que passa
+          //o que fazer no caso nesse caso nada ja que esta valido.
+          return null;
         }
       },
     );
   }
 
-  void _calculateImc() {
-    setState(
-      () {
-        print('Entrou no setstate');
+  _calculateImc() {
+    double a = double.parse(preco.replaceAll(RegExp(r'R\$'), '')) / 100;
+    int b = int.parse(bebida);
+    double cal = a + b;
+    setState(() => soma.updateValue(cal));
+    print(a + b);
 
-        double weight = double.parse(weightController.text);
-        print('Peso: ${weightController.text}');
-        print('Preço: ${priceController}');
-        double price = double.parse(
-          priceController.text.replaceAll(RegExp(r','), "."),
-        );
+    //TODO! codigo antigo não apaguei só comentei.
 
-        // double imc = weight / (price * price);
+    // setState(
+    //   () {
+    //     print('Entrou no setstate');
 
-        double um_Ml = price / weight;
-        double calc_doisMeiaNove = um_Ml * 269;
-        double calc_tresTresZero = um_Ml * 330; // Garrafa de vidro 330ml
-        double calc_tresCincoZero = um_Ml * 350; // tresCincoZero de 350ml
-        double calc_quatroSeteTres = um_Ml * 473; // Lata de 473ml
-        double calc_seisSeisZero = um_Ml * 600; // Garrafa de vidro 600ml
-        double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
+    //     double weight = double.parse(weightController.text);
+    //     print('Peso: ${weightController.text}');
+    //     print('Preço: ${priceController}');
+    //     double price = double.parse(
+    //       priceController.text.replaceAll(RegExp(r','), "."),
+    //     );
 
-        doisMeiaNove =
-            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsFixed(2)}";
-        tresTresZero =
-            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsFixed(2)}";
-        tresCincoZero =
-            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsFixed(2)}";
-        quatroSeteTres =
-            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsFixed(2)}";
-        seisSeisZero =
-            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsFixed(2)}";
-        Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsFixed(2)}";
-      },
-    );
+    //     // double imc = weight / (price * price);
+
+    //     double um_Ml = price / weight;
+    //     double calc_doisMeiaNove = um_Ml * 269;
+    //     double calc_tresTresZero = um_Ml * 330; // Garrafa de vidro 330ml
+    //     double calc_tresCincoZero = um_Ml * 350; // tresCincoZero de 350ml
+    //     double calc_quatroSeteTres = um_Ml * 473; // Lata de 473ml
+    //     double calc_seisSeisZero = um_Ml * 600; // Garrafa de vidro 600ml
+    //     double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
+
+    //     doisMeiaNove =
+    //         "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsFixed(2)}";
+    //     tresTresZero =
+    //         "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsFixed(2)}";
+    //     tresCincoZero =
+    //         "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsFixed(2)}";
+    //     quatroSeteTres =
+    //         "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsFixed(2)}";
+    //     seisSeisZero =
+    //         "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsFixed(2)}";
+    //     Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsFixed(2)}";
+    //   },
+    // );
   }
 
   @override
@@ -175,12 +194,17 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
                     // fontWeight: FontWeight.bold,
                   ),
                   controller: weightController,
+                  onChanged: (value) {
+                    bebida = value;
+                  },
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.digitsOnly
                   ],
                   validator: (value) {
                     if (value.isEmpty) {
                       return "Insira quantos mililitros (ml)";
+                    } else {
+                      return null;
                     }
                   },
                 ),
@@ -243,7 +267,8 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
                                   children: <Widget>[
                                     Row(
                                       children: <Widget>[
-                                        Text(doisMeiaNove),
+                                        Text(
+                                            soma.text == null ? "" : soma.text),
                                       ],
                                     )
                                   ],
