@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
@@ -82,9 +83,9 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
         // fontWeight: FontWeight.bold,
       ),
       controller: longCtrl,
-      // inputFormatters: <TextInputFormatter>[
-      //   FilteringTextInputFormatter.digitsOnly
-      // ],
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.digitsOnly
+      ],
       validator: (value) {
         if (value.isEmpty) {
           return "Insira quantos mililitros (ml)";
