@@ -42,7 +42,7 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
   // TODO: Fazer no food_screen também
   Widget _moneyCustomized() {
     print('Entrou no moneyCustomized');
-    var priceControl = new MoneyMaskedTextController(
+    var priceController = new MoneyMaskedTextController(
         initialValue: 0,
         decimalSeparator: ',',
         thousandSeparator: '.',
@@ -88,9 +88,9 @@ class _DrinksScreenState extends State<DrinksScreenTest> {
 
         double weight = double.parse(weightController.text);
         print('Peso: ${weightController.text}');
-        print('Preço: ${priceController}');
+        print('Preço: ${priceController.text}');
         double price = double.parse(
-          priceController.text.replaceAll(RegExp(r','), "."),
+          (priceController.text).replaceAll(RegExp(r','), "."),
         );
 
         // double imc = weight / (price * price);
