@@ -1,8 +1,6 @@
 import 'dart:developer';
-import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final _inputFieldHeight = 60.0;
@@ -40,46 +38,46 @@ class _DrinksScreenState extends State<DrinksScreen> {
   }
 
   // TODO: Fazer no food_screen também
-  Widget _moneyCustomized() {
-    print('Entrou no moneyCustomized');
-    var priceController = new MoneyMaskedTextController(
-        initialValue: 0,
-        decimalSeparator: ',',
-        thousandSeparator: '.',
-        leftSymbol: 'R\$',
-        precision: 2);
+  // Widget _moneyCustomized() {
+  //   print('Entrou no moneyCustomized');
+  //   var priceController = new MoneyMaskedTextController(
+  //       initialValue: 0,
+  //       decimalSeparator: ',',
+  //       thousandSeparator: '.',
+  //       leftSymbol: 'R\$',
+  //       precision: 2);
 
-    // priceController.updateValue(123.34);
-    print('Preço dentro do moneyCustomized ${priceController.text}');
+  //   // priceController.updateValue(123.34);
+  //   print('Preço dentro do moneyCustomized ${priceController.text}');
 
-    return new TextFormField(
-      keyboardType: TextInputType.number,
-      decoration: InputDecoration(
-        icon: Icon(Icons.monetization_on),
-        hintText: 'Digite o preço do produto',
-        labelText: "Preço (R\$)",
-        labelStyle: TextStyle(
-            // color: Colors.lightBlue,
-            ),
-        border: _roundedInputDecoration(),
-      ),
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        // color: Colors.lightBlue,
-        fontSize: 12.0,
-      ),
-      controller: priceController,
-      inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.digitsOnly,
-        // RealInputFormatter(centavos: true),
-      ],
-      validator: (value) {
-        if (value.isEmpty) {
-          return "Insira o Preço (R\$)";
-        }
-      },
-    );
-  }
+  //   return new TextFormField(
+  //     keyboardType: TextInputType.number,
+  //     decoration: InputDecoration(
+  //       icon: Icon(Icons.monetization_on),
+  //       hintText: 'Digite o preço do produto',
+  //       labelText: "Preço (R\$)",
+  //       labelStyle: TextStyle(
+  //           // color: Colors.lightBlue,
+  //           ),
+  //       border: _roundedInputDecoration(),
+  //     ),
+  //     textAlign: TextAlign.center,
+  //     style: TextStyle(
+  //       // color: Colors.lightBlue,
+  //       fontSize: 12.0,
+  //     ),
+  //     controller: priceController,
+  //     inputFormatters: <TextInputFormatter>[
+  //       FilteringTextInputFormatter.digitsOnly,
+  //       // RealInputFormatter(centavos: true),
+  //     ],
+  //     validator: (value) {
+  //       if (value.isEmpty) {
+  //         return "Insira o Preço (R\$)";
+  //       }
+  //     },
+  //   );
+  // }
 
   void _calculateImc() {
     setState(
@@ -185,7 +183,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                   height: 30.0,
                 ),
                 ///////////////////////Entrada do campo moeda
-                _moneyCustomized(),
+                // _moneyCustomized(),
                 SizedBox(
                   height: 30.0,
                 ),

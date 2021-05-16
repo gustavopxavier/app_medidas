@@ -30,8 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.0.0
   animated_splash_screen: ^1.1.0
-  brasil_fields: ^1.1.2
-  flutter_masked_text: ^0.8.0
+  moneytextformfield: ^0.3.5+1
+  # brasil_fields: ^1.1.2
+  # flutter_masked_text: ^0.8.0
+  # masked_text: ^0.0.6
 
 dev_dependencies:
   flutter_test:
