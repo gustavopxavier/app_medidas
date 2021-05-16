@@ -118,6 +118,7 @@ class _FoodScreenState extends State<FoodScreen> {
                       labelStyle: TextStyle(
                         color: Colors.blue,
                       ),
+                      border: _roundedInputDecoration(),
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -134,6 +135,9 @@ class _FoodScreenState extends State<FoodScreen> {
                       }
                     },
                   ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
                   TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
@@ -143,6 +147,7 @@ class _FoodScreenState extends State<FoodScreen> {
                       labelStyle: TextStyle(
                         color: Colors.blue,
                       ),
+                      border: _roundedInputDecoration(),
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -357,4 +362,10 @@ class _FoodScreenState extends State<FoodScreen> {
               )),
         ));
   }
+}
+
+_roundedInputDecoration() {
+  final _inputFieldHeight = 60.0;
+  return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(_inputFieldHeight * 0.5));
 }

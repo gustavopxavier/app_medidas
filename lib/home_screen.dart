@@ -1,4 +1,5 @@
 import 'package:app_medidas/drinks_screen.dart';
+import 'package:app_medidas/drinks_screen_test.dart';
 import 'package:app_medidas/food_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Aplicativo Medidas',
       home: DefaultTabController(
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: TabBarView(
             children: [
-              DrinksScreen(),
+              DrinksScreenTest(),
               FoodScreen(),
             ],
           ),

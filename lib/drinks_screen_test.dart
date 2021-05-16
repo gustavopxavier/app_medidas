@@ -8,12 +8,12 @@ import 'package:google_fonts/google_fonts.dart';
 final _inputFieldHeight = 60.0;
 // final _moneyFormat = NumberFormat("#,##0.00", "pt_BR");
 
-class DrinksScreen extends StatefulWidget {
+class DrinksScreenTest extends StatefulWidget {
   @override
   _DrinksScreenState createState() => _DrinksScreenState();
 }
 
-class _DrinksScreenState extends State<DrinksScreen> {
+class _DrinksScreenState extends State<DrinksScreenTest> {
   TextEditingController weightController = TextEditingController();
   TextEditingController priceController = TextEditingController();
 
@@ -26,27 +26,27 @@ class _DrinksScreenState extends State<DrinksScreen> {
   String seisSeisZero = "";
   String Hum_mil = "";
 
-  void _resetFields() {
-    weightController.text = "";
-    priceController.text = "";
-    setState(() {
-      doisMeiaNove = "";
-      tresTresZero = "";
-      tresCincoZero = "";
-      quatroSeteTres = "";
-      seisSeisZero = "";
-      Hum_mil = "";
-    });
-  }
+  // void _resetFields() {
+  //   weightController.text = "";
+  //   priceController.text = "";
+  //   setState(() {
+  //     doisMeiaNove = "";
+  //     tresTresZero = "";
+  //     tresCincoZero = "";
+  //     quatroSeteTres = "";
+  //     seisSeisZero = "";
+  //     Hum_mil = "";
+  //   });
+  // }
 
   // TODO: Fazer no food_screen também
   Widget _moneyCustomized() {
     print('Entrou no moneyCustomized');
-    var priceController = new MoneyMaskedTextController(
+    var priceControl = new MoneyMaskedTextController(
         initialValue: 0,
         decimalSeparator: ',',
         thousandSeparator: '.',
-        leftSymbol: 'R\$',
+        // leftSymbol: 'R\$',
         precision: 2);
 
     // priceController.updateValue(123.34);
@@ -88,8 +88,10 @@ class _DrinksScreenState extends State<DrinksScreen> {
 
         double weight = double.parse(weightController.text);
         print('Peso: ${weightController.text}');
-        double price = double.parse(priceController.text);
-        print('Preço: ${priceController.text}');
+        print('Preço: ${priceController}');
+        double price = double.parse(
+          priceController.text.replaceAll(RegExp(r','), "."),
+        );
 
         // double imc = weight / (price * price);
 
@@ -128,7 +130,8 @@ class _DrinksScreenState extends State<DrinksScreen> {
           IconButton(
             icon: Icon(Icons.refresh),
             color: Colors.lightBlue,
-            onPressed: _resetFields,
+            // onPressed: _resetFields,
+            onPressed: () {},
           )
         ],
       ),
@@ -199,7 +202,7 @@ class _DrinksScreenState extends State<DrinksScreen> {
                         size: 30,
                       ),
                       label: Text(
-                        'Calcular',
+                        'Calcular Teste',
                         style: GoogleFonts.oswald(fontSize: 20.0),
                       ),
                       style: ButtonStyle(
