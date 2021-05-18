@@ -1,12 +1,11 @@
-import 'package:app_medidas/drinks_screen.dart';
 import 'package:app_medidas/drinks_screen_money.dart';
-import 'package:app_medidas/drinks_screen_test.dart';
-import 'package:app_medidas/food_screen.dart';
-import 'package:app_medidas/widgets/alerts_teste.dart';
+import 'package:app_medidas/food_screen_money.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // var textBebidas = Text('Bebidas', style: GoogleFonts.oswald());
+
+void main() => runApp(HomeScreen());
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -51,8 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
           body: TabBarView(
             children: [
               DrinksScreenMoney(),
-              // FoodScreen(),
-              AlertsTestes(),
+              FoodScreenMoney(),
+              // AlertsTestes(),
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:app_medidas/calculos/calc_foods.dart';
 import 'package:app_medidas/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,23 +6,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-void main() => runApp(DrinksScreenMoney());
+void main() => runApp(FoodScreenMoney());
 
-class DrinksScreenMoney extends StatefulWidget {
+class FoodScreenMoney extends StatefulWidget {
   @override
-  _DrinksScreenMoneyState createState() => _DrinksScreenMoneyState();
+  _FoodScreenMoneyState createState() => _FoodScreenMoneyState();
 }
 
-class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
+class _FoodScreenMoneyState extends State<FoodScreenMoney> {
   TextEditingController longCtrl = TextEditingController();
   TextEditingController compactCtrl = TextEditingController();
 
-  String doisMeiaNove = "";
-  String tresTresZero = "";
-  String tresCincoZero = "";
-  String quatroSeteTres = "";
-  String seisSeisZero = "";
-  String Hum_mil = "";
+  String duzentos_gramas = "";
+  String Trezentos_Gramas = "";
+  String Quinhentos_Gramas = "";
+  String Oitocentos_Gramas = "";
+  String Um_Quilo = "";
+  String Dois_Quilos = "";
 
   @override
   void initState() {
@@ -50,7 +51,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SizedBox(height: 30),
-                _campoMililitros(),
+                _campoPeso(),
                 _campoPreco(),
                 _botaoCalcular(),
               ],
@@ -63,7 +64,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
 /////////////////////// WIDGETS ////////////////////////
 
-  Widget _campoMililitros() {
+  Widget _campoPeso() {
     TextStyle _ts = TextStyle(fontSize: 14.0);
     return Padding(
       padding: const EdgeInsets.all(14.0),
@@ -71,8 +72,8 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           // icon: Icon(Icons.liquor),
-          labelText: "Mililitros (ml)",
-          hintText: 'Digite a quantidade de mililitros (ml)',
+          labelText: "Peso (g)",
+          hintText: 'Digite o peso em gramas (g)',
           labelStyle: _ts,
           // border: _roundedInputDecoration(),
           // isDense: true,
@@ -128,37 +129,38 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
         // double imc = weight / (price * price);
 
-        double um_Ml = price / weight;
-        double calc_doisMeiaNove = um_Ml * 269;
-        double calc_tresTresZero = um_Ml * 330; // Garrafa de vidro 330ml
-        double calc_tresCincoZero = um_Ml * 350; // tresCincoZero de 350ml
-        double calc_quatroSeteTres = um_Ml * 473; // Lata de 473ml
-        double calc_seisSeisZero = um_Ml * 600; // Garrafa de vidro 600ml
-        double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
+        /////////////// CALCULANDO PESOS /////////////////////
 
-        doisMeiaNove =
-            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsFixed(2)}";
-        tresTresZero =
-            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsFixed(2)}";
-        tresCincoZero =
-            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsFixed(2)}";
-        quatroSeteTres =
-            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsFixed(2)}";
-        seisSeisZero =
-            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsFixed(2)}";
-        Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsFixed(2)}";
+        double um_Grama = calcUmGrama(price, weight);
 
-        _print() {
-          print(doisMeiaNove);
-          print(tresTresZero);
-          print(tresCincoZero);
-          print(quatroSeteTres);
-          print(seisSeisZero);
-          print(Hum_mil);
-        }
+        double calc_Duzentos_Gramas = calcDuzentosGramas(um_Grama);
 
-        // _onBasicAlertPressed(context);
-        _print();
+        double calc_Trezentos_Gramas = calcTrezentosGramas(um_Grama);
+
+        double calc_Quinhentos_Gramas = calcQuinhentosGramas(um_Grama);
+
+        double calc_Oitocentos_Gramas = calcOitocentosGramas(um_Grama);
+
+        double calc_Um_Quilo = calcHumQuilo(um_Grama);
+
+        double calc_Dois_Quilos = calcDoisQuilos(um_Grama);
+
+        duzentos_gramas =
+            "Embalagem (200g): R\$ ${calc_Duzentos_Gramas.toStringAsFixed(2)}";
+
+        Trezentos_Gramas =
+            "Embalagem (300g): R\$ ${calc_Trezentos_Gramas.toStringAsFixed(2)}";
+
+        Quinhentos_Gramas =
+            "Embalagem(500g): R\$ ${calc_Quinhentos_Gramas.toStringAsFixed(2)}";
+
+        Oitocentos_Gramas =
+            "Embalagem(800g): R\$ ${calc_Oitocentos_Gramas.toStringAsFixed(2)}";
+
+        Um_Quilo = "Embalagem(1 Kg): R\$ ${calc_Um_Quilo.toStringAsFixed(2)}";
+
+        Dois_Quilos =
+            "Embalagem(2 kg): R\$ ${calc_Dois_Quilos.toStringAsFixed(2)}";
 
         showAlertDialog(BuildContext context) {
           // set up the button
@@ -172,12 +174,12 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
             title: Text("Resultado:"),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            content: Text("$doisMeiaNove \n\n"
-                "$tresTresZero \n\n"
-                "$tresCincoZero \n\n"
-                "$quatroSeteTres \n\n"
-                "$seisSeisZero \n\n"
-                "$Hum_mil\n"),
+            content: Text("$duzentos_gramas \n\n"
+                "$Trezentos_Gramas \n\n"
+                "$Quinhentos_Gramas \n\n"
+                "$Oitocentos_Gramas \n\n"
+                "$Um_Quilo \n\n"
+                "$Dois_Quilos\n"),
             actions: [
               _botaoAlert(),
             ],
