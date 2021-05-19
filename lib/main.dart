@@ -8,7 +8,6 @@ void main() {
       home: MyApp(),
       debugShowCheckedModeBanner: false,
       title: 'Aplicativo Medidas',
-      // theme: ThemeData(fontFamily: GoogleFonts.oswald(),
     ),
   );
 }
