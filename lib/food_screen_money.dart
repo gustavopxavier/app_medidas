@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 void main() => runApp(FoodScreenMoney());
 
@@ -17,12 +16,12 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
   TextEditingController longCtrl = TextEditingController();
   TextEditingController compactCtrl = TextEditingController();
 
-  String duzentos_gramas = "";
-  String Trezentos_Gramas = "";
-  String Quinhentos_Gramas = "";
-  String Oitocentos_Gramas = "";
-  String Um_Quilo = "";
-  String Dois_Quilos = "";
+  String duzentosGramas = "";
+  String trezentosGramas = "";
+  String quinhentosGramas = "";
+  String oitocentosGramas = "";
+  String umQuilo = "";
+  String doisQuilos = "";
 
   @override
   void initState() {
@@ -84,11 +83,13 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly
         ],
-        validator: (value) {
-          if (value.isEmpty) {
-            return "Insira quantos mililitros (ml)";
-          }
-        },
+        //TODO: Realizar validação do campo
+
+        // validator: (value) {
+        //   if (value.isEmpty) {
+        //     return "Insira quantos mililitros (ml)";
+        //   }
+        // },
       ),
     );
   }
@@ -96,8 +97,6 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 ////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
     TextStyle _ts = TextStyle(fontSize: 14.0);
-    Text _labelText =
-        Text('Preço', style: TextStyle(fontWeight: FontWeight.bold));
     var _real = 'R\$';
 
     return MoneyTextFormField(
@@ -131,36 +130,36 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 
         /////////////// CALCULANDO PESOS /////////////////////
 
-        double um_Grama = calcUmGrama(price, weight);
+        double umGrama = calcUmGrama(price, weight);
 
-        double calc_Duzentos_Gramas = calcDuzentosGramas(um_Grama);
+        double resultadoDuzentosGramas = calcDuzentosGramas(umGrama);
 
-        double calc_Trezentos_Gramas = calcTrezentosGramas(um_Grama);
+        double resultadoTrezentosGramas = calcTrezentosGramas(umGrama);
 
-        double calc_Quinhentos_Gramas = calcQuinhentosGramas(um_Grama);
+        double resultadoQuinhentosGramas = calcQuinhentosGramas(umGrama);
 
-        double calc_Oitocentos_Gramas = calcOitocentosGramas(um_Grama);
+        double resultadoOitocentosGramas = calcOitocentosGramas(umGrama);
 
-        double calc_Um_Quilo = calcHumQuilo(um_Grama);
+        double resultadoUmQuilo = calcHumQuilo(umGrama);
 
-        double calc_Dois_Quilos = calcDoisQuilos(um_Grama);
+        double resultadoDoisQuilos = calcDoisQuilos(umGrama);
 
-        duzentos_gramas =
-            "Embalagem (200g): R\$ ${calc_Duzentos_Gramas.toStringAsFixed(2)}";
+        duzentosGramas =
+            "Embalagem (200g): R\$ ${resultadoDuzentosGramas.toStringAsFixed(2)}";
 
-        Trezentos_Gramas =
-            "Embalagem (300g): R\$ ${calc_Trezentos_Gramas.toStringAsFixed(2)}";
+        trezentosGramas =
+            "Embalagem (300g): R\$ ${resultadoTrezentosGramas.toStringAsFixed(2)}";
 
-        Quinhentos_Gramas =
-            "Embalagem(500g): R\$ ${calc_Quinhentos_Gramas.toStringAsFixed(2)}";
+        quinhentosGramas =
+            "Embalagem(500g): R\$ ${resultadoQuinhentosGramas.toStringAsFixed(2)}";
 
-        Oitocentos_Gramas =
-            "Embalagem(800g): R\$ ${calc_Oitocentos_Gramas.toStringAsFixed(2)}";
+        oitocentosGramas =
+            "Embalagem(800g): R\$ ${resultadoOitocentosGramas.toStringAsFixed(2)}";
 
-        Um_Quilo = "Embalagem(1 Kg): R\$ ${calc_Um_Quilo.toStringAsFixed(2)}";
+        umQuilo = "Embalagem(1 Kg): R\$ ${resultadoUmQuilo.toStringAsFixed(2)}";
 
-        Dois_Quilos =
-            "Embalagem(2 kg): R\$ ${calc_Dois_Quilos.toStringAsFixed(2)}";
+        doisQuilos =
+            "Embalagem(2 kg): R\$ ${resultadoDoisQuilos.toStringAsFixed(2)}";
 
         showAlertDialog(BuildContext context) {
           // set up the button
@@ -174,12 +173,12 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
             title: Text("Resultado:"),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            content: Text("$duzentos_gramas \n\n"
-                "$Trezentos_Gramas \n\n"
-                "$Quinhentos_Gramas \n\n"
-                "$Oitocentos_Gramas \n\n"
-                "$Um_Quilo \n\n"
-                "$Dois_Quilos\n"),
+            content: Text("$duzentosGramas \n\n"
+                "$trezentosGramas \n\n"
+                "$quinhentosGramas \n\n"
+                "$oitocentosGramas \n\n"
+                "$umQuilo \n\n"
+                "$doisQuilos\n"),
             actions: [
               _botaoAlert(),
             ],
@@ -272,19 +271,19 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 
 /////////////////////////CONFIGURAÇÃO DE BORDAS//////////////
 
-_roundedInputDecoration() {
-  final _inputFieldHeight = 60.0;
+// _roundedInputDecoration() {
+//   final _inputFieldHeight = 60.0;
 
-  return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(_inputFieldHeight * 0.5));
-}
+//   return OutlineInputBorder(
+//       borderRadius: BorderRadius.circular(_inputFieldHeight * 0.5));
+// }
 
 ////////////////////// ALERT ////////////////////////////
 // The easiest way for creating RFlutter Alert
-_onBasicAlertPressed(context) {
-  Alert(
-    context: context,
-    title: "RFLUTTER ALERT",
-    desc: "Flutter is more awesome with RFlutter Alert.",
-  ).show();
-}
+// _onBasicAlertPressed(context) {
+//   Alert(
+//     context: context,
+//     title: "RFLUTTER ALERT",
+//     desc: "Flutter is more awesome with RFlutter Alert.",
+//   ).show();
+// }

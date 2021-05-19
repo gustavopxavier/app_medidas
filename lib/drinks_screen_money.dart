@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 void main() => runApp(DrinksScreenMoney());
 
@@ -21,7 +20,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
   String tresCincoZero = "";
   String quatroSeteTres = "";
   String seisSeisZero = "";
-  String Hum_mil = "";
+  String humMil = "";
 
   @override
   void initState() {
@@ -83,11 +82,13 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly
         ],
-        validator: (value) {
-          if (value.isEmpty) {
-            return "Insira quantos mililitros (ml)";
-          }
-        },
+        //TODO: Realizar validação do campo
+
+        // validator: (value) {
+        //   if (value.isEmpty) {
+        //     return "Insira quantos mililitros (ml)";
+        //   }
+        // },
       ),
     );
   }
@@ -95,8 +96,6 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 ////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
     TextStyle _ts = TextStyle(fontSize: 14.0);
-    Text _labelText =
-        Text('Preço', style: TextStyle(fontWeight: FontWeight.bold));
     var _real = 'R\$';
 
     return MoneyTextFormField(
@@ -128,25 +127,25 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
         // double imc = weight / (price * price);
 
-        double um_Ml = price / weight;
-        double calc_doisMeiaNove = um_Ml * 269;
-        double calc_tresTresZero = um_Ml * 330; // Garrafa de vidro 330ml
-        double calc_tresCincoZero = um_Ml * 350; // tresCincoZero de 350ml
-        double calc_quatroSeteTres = um_Ml * 473; // Lata de 473ml
-        double calc_seisSeisZero = um_Ml * 600; // Garrafa de vidro 600ml
-        double calc_Hum_mil = um_Ml * 1000; // Garrafa de um litro
+        double umMl = price / weight;
+        double resultadoDoisMeiaNove = umMl * 269;
+        double resultadoTresTresZero = umMl * 330; // Garrafa de vidro 330ml
+        double resultadoTresCincoZero = umMl * 350; // tresCincoZero de 350ml
+        double resultadoQuatroSeteTres = umMl * 473; // Lata de 473ml
+        double resultadoSeisSeisZero = umMl * 600; // Garrafa de vidro 600ml
+        double resultadoHumMil = umMl * 1000; // Garrafa de um litro
 
         doisMeiaNove =
-            "Produto (269ml): R\$ ${calc_doisMeiaNove.toStringAsFixed(2)}";
+            "Produto (269ml): R\$ ${resultadoDoisMeiaNove.toStringAsFixed(2)}";
         tresTresZero =
-            "Produto (330ml): R\$ ${calc_tresTresZero.toStringAsFixed(2)}";
+            "Produto (330ml): R\$ ${resultadoTresTresZero.toStringAsFixed(2)}";
         tresCincoZero =
-            "Produto (350ml): R\$ ${calc_tresCincoZero.toStringAsFixed(2)}";
+            "Produto (350ml): R\$ ${resultadoTresCincoZero.toStringAsFixed(2)}";
         quatroSeteTres =
-            "Produto (473ml): R\$ ${calc_quatroSeteTres.toStringAsFixed(2)}";
+            "Produto (473ml): R\$ ${resultadoQuatroSeteTres.toStringAsFixed(2)}";
         seisSeisZero =
-            "Produto (600ml): R\$ ${calc_seisSeisZero.toStringAsFixed(2)}";
-        Hum_mil = "Produto (1l): R\$ ${calc_Hum_mil.toStringAsFixed(2)}";
+            "Produto (600ml): R\$ ${resultadoSeisSeisZero.toStringAsFixed(2)}";
+        humMil = "Produto (1l): R\$ ${resultadoHumMil.toStringAsFixed(2)}";
 
         _print() {
           print(doisMeiaNove);
@@ -154,7 +153,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
           print(tresCincoZero);
           print(quatroSeteTres);
           print(seisSeisZero);
-          print(Hum_mil);
+          print(humMil);
         }
 
         // _onBasicAlertPressed(context);
@@ -177,7 +176,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
                 "$tresCincoZero \n\n"
                 "$quatroSeteTres \n\n"
                 "$seisSeisZero \n\n"
-                "$Hum_mil\n"),
+                "$humMil\n"),
             actions: [
               _botaoAlert(),
             ],
@@ -270,19 +269,19 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
 /////////////////////////CONFIGURAÇÃO DE BORDAS//////////////
 
-_roundedInputDecoration() {
-  final _inputFieldHeight = 60.0;
+// _roundedInputDecoration() {
+//   final _inputFieldHeight = 60.0;
 
-  return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(_inputFieldHeight * 0.5));
-}
+//   return OutlineInputBorder(
+//       borderRadius: BorderRadius.circular(_inputFieldHeight * 0.5));
+// }
 
 ////////////////////// ALERT ////////////////////////////
 // The easiest way for creating RFlutter Alert
-_onBasicAlertPressed(context) {
-  Alert(
-    context: context,
-    title: "RFLUTTER ALERT",
-    desc: "Flutter is more awesome with RFlutter Alert.",
-  ).show();
-}
+// _onBasicAlertPressed(context) {
+//   Alert(
+//     context: context,
+//     title: "RFLUTTER ALERT",
+//     desc: "Flutter is more awesome with RFlutter Alert.",
+//   ).show();
+// }
