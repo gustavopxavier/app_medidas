@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Aplicativo Medidas',
+      //TODO: Fazer splash screen
       home: AnimatedSplashScreen(
         duration: 3000,
         splash: Icons.home,
