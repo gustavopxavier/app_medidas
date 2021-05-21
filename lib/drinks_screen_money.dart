@@ -256,7 +256,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
           onPressed: () {
             print('Clicou no botão OK do alert');
             // Navigator.of(context).
-            //TODO: Ajeitar botão do alert
+            //TODO: Botão dos resultados desabilitado, porém ajeitar futuramente
             runApp(HomeScreen());
 
             // }
