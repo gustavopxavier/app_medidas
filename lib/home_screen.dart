@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(
-              'Compare seus produtos',
+              'Aplicativo Pesa Preço',
               style: GoogleFonts.oswald(),
             ),
             centerTitle: true,

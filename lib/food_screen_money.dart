@@ -33,6 +33,12 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Compare seu produto',
+            style: GoogleFonts.oswald(),
+          ),
+        ),
         ////////////////////Floating action button //////////////////
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.calculate),
@@ -258,8 +264,8 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
           onPressed: () {
             print('Clicou no botão OK do alert');
             // Navigator.of(context).
-            //TODO: Ajeitar botão do alert
-            runApp(HomeScreen());
+            //TODO: Botão dos resultados desabilitado, porém ajeitar futuramente
+            // runApp(HomeScreen());
 
             // }
           },
