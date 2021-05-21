@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      title: 'Aplicativo Medidas',
+      title: 'Aplicativo Pesa Peso',
       home: DefaultTabController(
         length: 2,
         child: Scaffold(

@@ -177,9 +177,9 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
                 "$quatroSeteTres \n\n"
                 "$seisSeisZero \n\n"
                 "$humMil\n"),
-            actions: [
-              _botaoAlert(),
-            ],
+            // actions: [
+            //   _botaoAlert(),
+            // ],
           );
 
           // show the dialog
