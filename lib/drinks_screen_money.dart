@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
 void main() => runApp(DrinksScreenMoney());
@@ -70,7 +69,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 /////////////////////// WIDGETS ////////////////////////
 
   Widget _campoMililitros() {
-    TextStyle _ts = TextStyle(fontSize: 14.0);
+    TextStyle _ts = TextStyle(fontSize: 18.0);
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: TextFormField(
@@ -102,7 +101,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
 ////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
-    TextStyle _ts = TextStyle(fontSize: 14.0);
+    TextStyle _ts = TextStyle(fontSize: 18.0);
     var _real = 'R\$';
 
     return MoneyTextFormField(
@@ -176,8 +175,9 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
           // set up the AlertDialog
           AlertDialog alert = AlertDialog(
             title: Text("Resultado:"),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
             content: Text("$doisMeiaNove \n\n"
                 "$tresTresZero \n\n"
                 "$tresCincoZero \n\n"

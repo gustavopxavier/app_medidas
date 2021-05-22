@@ -1,9 +1,7 @@
 import 'package:app_medidas/drinks_screen_money.dart';
 import 'package:app_medidas/food_screen_money.dart';
-import 'package:app_medidas/text_theme.dart';
 import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // var textBebidas = Text('Bebidas', style: GoogleFonts.oswald());
 

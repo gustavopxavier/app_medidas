@@ -32,6 +32,8 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
+
         appBar: AppBar(
           elevation: 0.0,
           title: Text(
