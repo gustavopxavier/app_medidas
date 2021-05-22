@@ -1,4 +1,3 @@
-import 'package:app_medidas/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,11 +31,13 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          elevation: 0.0,
           title: Text(
             'Compare seu produto',
-            style: GoogleFonts.oswald(),
           ),
+          centerTitle: true,
         ),
         ////////////////////Floating action button //////////////////
         floatingActionButton: FloatingActionButton(
@@ -215,7 +216,6 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
           ),
           label: Text(
             'Calcular',
-            style: GoogleFonts.oswald(fontSize: 20.0),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(

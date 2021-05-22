@@ -1,5 +1,7 @@
 import 'package:app_medidas/drinks_screen_money.dart';
 import 'package:app_medidas/food_screen_money.dart';
+import 'package:app_medidas/text_theme.dart';
+import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,16 +18,35 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      title: 'Aplicativo Pesa Peso',
+      theme: ThemeData(
+        colorScheme: colorScheme,
+        primaryColor: colorScheme.primary,
+        accentColor: colorScheme.secondary,
+        backgroundColor: colorScheme.background,
+        buttonTheme: ButtonThemeData(
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+            foregroundColor: colorScheme.onSecondary),
+        inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(4))),
+        cardTheme: CardTheme(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        ),
+        dividerColor: Color(0xFF000000),
+        textTheme: textTheme,
+        primaryTextTheme: textTheme,
+        accentTextTheme: textTheme,
+      ),
+      title: 'Aplicativo Pesa Preço',
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
           appBar: AppBar(
             title: Text(
               'Aplicativo Pesa Preço',
-              style: GoogleFonts.oswald(),
             ),
             centerTitle: true,
             bottom: TabBar(

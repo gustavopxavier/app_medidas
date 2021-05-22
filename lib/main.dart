@@ -7,7 +7,7 @@ void main() {
     MaterialApp(
       home: MyApp(),
       debugShowCheckedModeBanner: false,
-      title: 'Aplicativo Pesa Peso',
+      title: 'Aplicativo Pesa Preço',
     ),
   );
 }
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      title: 'Aplicativo Pesa Peso',
+      title: 'Aplicativo Pesa Preço',
       //TODO: Fazer splash screen
       home: AnimatedSplashScreen(
         duration: 3000,
