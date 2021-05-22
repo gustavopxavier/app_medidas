@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Aplicativo Pesa Preço',
-      //TODO: Fazer splash screen
+      //TODO: Ajeitar splash
       home: AnimatedSplashScreen(
         duration: 3000,
-        splash: Icons.home,
+        splash: 'images/logotipo.gif',
         nextScreen: HomeScreen(),
         splashTransition: SplashTransition.fadeTransition,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
       ),
     );
   }

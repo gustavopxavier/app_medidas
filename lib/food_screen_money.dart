@@ -187,9 +187,9 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
                 "$oitocentosGramas \n\n"
                 "$umQuilo \n\n"
                 "$doisQuilos\n"),
-            actions: [
-              _botaoAlert(),
-            ],
+            // actions: [
+            //   _botaoAlert(),
+            // ],
           );
 
           // show the dialog
