@@ -219,7 +219,6 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
           ),
           label: Text(
             'Calcular',
-            style: GoogleFonts.oswald(fontSize: 20.0),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
