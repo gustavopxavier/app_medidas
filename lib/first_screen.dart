@@ -2,69 +2,88 @@ import 'package:app_medidas/calc_screen.dart';
 import 'package:app_medidas/contact_screen.dart';
 import 'package:app_medidas/donation_screen.dart';
 import 'package:app_medidas/start_screen.dart';
-import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 
+void main() => runApp(const FirstScreen());
+
+/// This is the main application widget.
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({key}) : super(key: key);
+
+  static const String _title = 'Pesa Preço';
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pesa Peso',
-      home: MyFirstScreen(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: _title,
+      home: MyStatefulWidget(),
     );
   }
 }
 
-class MyFirstScreen extends StatefulWidget {
+/// This is the stateful widget that the main application instantiates.
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({key}) : super(key: key);
+
   @override
-  _MyFirstScreenState createState() => _MyFirstScreenState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-class _MyFirstScreenState extends State<MyFirstScreen> {
-  int _currentIndex = 0;
-
-  final tabs = [
+/// This is the private State class that goes with MyStatefulWidget.
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static List<Widget> _widgetOptions = <Widget>[
     StartScreen(),
     CalcScreen(),
     DonationScreen(),
     ContactScreen(),
   ];
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: tabs[_currentIndex],
+      appBar: AppBar(
+        elevation: 0.0,
+        title: const Text(
+          'Aplicativo Pesa Preço',
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        elevation: 0.0,
-        selectedItemColor: colorScheme.surface,
-        unselectedItemColor: colorScheme.surface.withOpacity(.60),
-        selectedLabelStyle: textTheme.caption,
-        unselectedLabelStyle: textTheme.caption,
-        onTap: (value) {
-          // Respond to item press.
-          setState(() => _currentIndex = value);
-        },
-        iconSize: 30,
-        items: [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Início',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.business),
             label: 'Calcular',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Doações',
+            icon: Icon(Icons.school),
+            label: 'Doação',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Contatos',
+            icon: Icon(Icons.school),
+            label: 'Contato',
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
       ),
     );
   }

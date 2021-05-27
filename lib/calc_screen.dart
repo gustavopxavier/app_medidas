@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // var textBebidas = Text('Bebidas', style: GoogleFonts.oswald());
 
-void main() => runApp(CalcScreen());
+// void main() => runApp(CalcScreen());
 
 class CalcScreen extends StatefulWidget {
   @override
@@ -43,8 +43,9 @@ class _CalcScreenState extends State<CalcScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0.0,
             title: Text(
-              'Aplicativo Pesa Preço',
+              '',
             ),
             centerTitle: true,
             bottom: TabBar(
