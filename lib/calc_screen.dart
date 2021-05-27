@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 // var textBebidas = Text('Bebidas', style: GoogleFonts.oswald());
 
-void main() => runApp(HomeScreen());
+void main() => runApp(CalcScreen());
 
-class HomeScreen extends StatefulWidget {
+class CalcScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _CalcScreenState createState() => _CalcScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CalcScreenState extends State<CalcScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

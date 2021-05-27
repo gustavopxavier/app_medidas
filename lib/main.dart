@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:app_medidas/home_screen.dart';
+import 'package:app_medidas/calc_screen.dart';
+import 'package:app_medidas/first_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         duration: 3000,
         splash: 'images/logotipo.gif',
-        nextScreen: HomeScreen(),
+        nextScreen: FirstScreen(),
         splashTransition: SplashTransition.fadeTransition,
         backgroundColor: Colors.white,
       ),
