@@ -1,7 +1,6 @@
 import 'package:app_medidas/calculos/calc_foods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
 void main() => runApp(FoodScreenMoney());
@@ -240,40 +239,40 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
     );
   }
 
-  Widget _botaoAlert() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
-      child: Container(
-        height: 50.0,
-        child: TextButton.icon(
-          icon: Icon(
-            Icons.calculate,
-            size: 30,
-          ),
-          label: Text(
-            'OK',
-            style: GoogleFonts.oswald(fontSize: 20.0),
-          ),
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
-              Colors.lightBlue,
-            ),
-            foregroundColor: MaterialStateProperty.all(
-              Colors.white,
-            ),
-          ),
-          onPressed: () {
-            print('Clicou no botão OK do alert');
-            // Navigator.of(context).
-            //TODO: Botão dos resultados desabilitado, porém ajeitar futuramente
-            // runApp(HomeScreen());
+  // Widget _botaoAlert() {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+  //     child: Container(
+  //       height: 50.0,
+  //       child: TextButton.icon(
+  //         icon: Icon(
+  //           Icons.calculate,
+  //           size: 30,
+  //         ),
+  //         label: Text(
+  //           'OK',
+  //           style: GoogleFonts.oswald(fontSize: 20.0),
+  //         ),
+  //         style: ButtonStyle(
+  //           backgroundColor: MaterialStateProperty.all(
+  //             Colors.lightBlue,
+  //           ),
+  //           foregroundColor: MaterialStateProperty.all(
+  //             Colors.white,
+  //           ),
+  //         ),
+  //         onPressed: () {
+  //           print('Clicou no botão OK do alert');
+  //           // Navigator.of(context).
+  //           //TODO: Botão dos resultados desabilitado, porém ajeitar futuramente
+  //           // runApp(HomeScreen());
 
-            // }
-          },
-        ),
-      ),
-    );
-  }
+  //           // }
+  //         },
+  //       ),
+  //     ),
+  //   );
+  // }
 }
 
 /////////////////////////CONFIGURAÇÃO DE BORDAS//////////////
