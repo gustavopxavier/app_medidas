@@ -8,6 +8,12 @@ class DonationScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         backgroundColor: colorScheme.primary,
+        cardTheme: CardTheme(
+          elevation: 10.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+        ),
       ),
       home: Container(
         color: colorScheme.primary,
