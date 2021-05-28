@@ -1,4 +1,5 @@
 import 'package:app_medidas/calculos/calc_foods.dart';
+import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
@@ -32,23 +33,6 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         resizeToAvoidBottomInset: false,
-
-        appBar: AppBar(
-          elevation: 0.0,
-          title: Text(
-            'Compare seu produto',
-          ),
-          centerTitle: true,
-        ),
-        ////////////////////Floating action button //////////////////
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.calculate),
-          onPressed: () {
-            print(longCtrl.text);
-            print(compactCtrl.text);
-            _calculate();
-          },
-        ),
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 40.0),
           child: ConstrainedBox(
@@ -71,7 +55,10 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 /////////////////////// WIDGETS ////////////////////////
 
   Widget _campoPeso() {
-    TextStyle _ts = TextStyle(fontSize: 14.0);
+    TextStyle _ts = TextStyle(
+      fontSize: 14.0,
+      color: colorScheme.primary,
+    );
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: TextFormField(
@@ -103,7 +90,10 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 
 ////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
-    TextStyle _ts = TextStyle(fontSize: 14.0);
+    TextStyle _ts = TextStyle(
+      fontSize: 14.0,
+      color: colorScheme.primary,
+    );
     var _real = 'R\$';
 
     return MoneyTextFormField(
@@ -118,7 +108,7 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
           hintText: 'Digite o preço do produto (R\$)',
           labelStyle: _ts,
           inputStyle: _ts,
-          formattedStyle: _ts.copyWith(color: Colors.blue),
+          formattedStyle: _ts.copyWith(color: colorScheme.primary),
         ),
       ),
     );
@@ -221,7 +211,7 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
-              Colors.lightBlue,
+              colorScheme.primary,
             ),
             foregroundColor: MaterialStateProperty.all(
               Colors.white,

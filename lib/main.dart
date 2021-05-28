@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:app_medidas/first_screen.dart';
+import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData.dark(),
+      theme: ThemeData(
+        colorScheme: colorScheme,
+        primaryColor: colorScheme.primary,
+        accentColor: colorScheme.primaryVariant,
+        backgroundColor: colorScheme.background,
+      ),
       debugShowCheckedModeBanner: false,
       title: 'Aplicativo Pesa Preço',
       //TODO: Ajeitar splash
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
         splash: 'images/logotipo.gif',
         nextScreen: FirstScreen(),
         splashTransition: SplashTransition.fadeTransition,
-        backgroundColor: Colors.white,
+        backgroundColor: colorScheme.primary,
       ),
     );
   }

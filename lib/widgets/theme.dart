@@ -29,10 +29,10 @@ final TextTheme textTheme = TextTheme(
 );
 
 final ColorScheme colorScheme = ColorScheme.light(
-  primary: Colors.blue,
-  onPrimary: Colors.black,
-  primaryVariant: Colors.orange,
-  background: Colors.red[100],
+  primary: Colors.green[800],
+  onPrimary: Colors.green[900],
+  primaryVariant: Colors.greenAccent,
+  background: Colors.green[800],
   onBackground: Colors.black,
   secondary: Colors.white,
   onSecondary: Colors.white,

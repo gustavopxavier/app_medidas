@@ -2,6 +2,7 @@ import 'package:app_medidas/calc_screen.dart';
 import 'package:app_medidas/contact_screen.dart';
 import 'package:app_medidas/donation_screen.dart';
 import 'package:app_medidas/start_screen.dart';
+import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const FirstScreen());
@@ -52,6 +53,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: colorScheme.onPrimary,
         elevation: 0.0,
         title: const Text(
           'Aplicativo Pesa Preço',
@@ -62,6 +64,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: colorScheme.primary,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
