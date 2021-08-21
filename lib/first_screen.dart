@@ -52,14 +52,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: colorScheme.onPrimary,
-        elevation: 0.0,
-        title: const Text(
-          'Aplicativo Pesa Preço',
-        ),
-        centerTitle: true,
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -85,7 +77,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: colorScheme.primaryVariant,
         onTap: _onItemTapped,
       ),
     );

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       //TODO: Ajeitar splash
       home: AnimatedSplashScreen(
         duration: 3000,
-        splash: 'images/logotipo.gif',
+        splash: 'images/logo.png',
         nextScreen: FirstScreen(),
         splashTransition: SplashTransition.fadeTransition,
         backgroundColor: colorScheme.primary,
