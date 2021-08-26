@@ -38,8 +38,218 @@ class _StartScreenState extends State<StartScreen> {
                   child: SingleChildScrollView(
                     child: Container(
                       padding: EdgeInsets.all(20.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dapibus purus. Nam consequat sed odio vitae aliquam. Aliquam quis sem diam. Praesent nec varius tellus. Vestibulum dapibus scelerisque lorem, ac tristique dolor pretium ut. Curabitur id orci vehicula leo fringilla varius. Nam ultrices fringilla mi sed porttitor. Nam at nisi blandit, aliquam mi sit amet, posuere elit. Cras eget vestibulum diam. Vivamus et ullamcorper metus, at vehicula sapien. Vestibulum id sollicitudin orci, vitae facilisis ipsum. ',
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    text: 'Aplicativo ',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 32),
+                                    children: const <TextSpan>[
+                                      TextSpan(
+                                        text: 'Pesa Preço',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      TextSpan(text: '!'),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Afinal de contas, o que é o App Pesa Preço?'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'O App Pesa Preço surgiu com a necessidade de tirar dúvidas relacionadas aos preços de produtos de uma mesma marca ou não e que possuem tamanhos diferentes seja ele em milímetros ou em gramas.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text: 'Como assim? Explique melhor.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Vamos lá, se você vai ao supermercado e deseja comprar leite em pó, ao chegar na seção você irá se deparar com várias marcas de leite em pó.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Além das marcas, muitas das vezes você também se depara com um produto da mesma marca, porém com diferentes tamanhos. Então ao verificar o preço dos diferentes tamanhos, lhe vem a pergunta: "Será que vale mais a pena comprar o produto maior ou o menor? Qual será o mais econômico?"'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Você não vai pegar uma calculadora para fazer os cálculos, ou vai?'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Não precisa, basta usar o Aplicativo Pesa Preço.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'E não se engane, muitas das vezes somos lesado achando que ao comprar um produto com uma maior quantidade, estamos economizando, onde na verdade se você comprar várias quantidades desse mesmo produto no tamanho menor, saíra mais barato do que você comprar um único produto de um tamanho maior.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Posteriormente mostraremos alguns exemplos de como utilizar o aplicativo e em breve estaremos disponibilizando aqui mesmo no App uma sessão de ajuda contendo um manual de utilização.'),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: RichText(
+                                  textAlign: TextAlign.justify,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        height: 1.5,
+                                        letterSpacing: 1.0,
+                                      ),
+                                      text:
+                                          'Caso haja dúvidas na utilização do aplicativo, vá até a sessão de "Contatos" aqui do nosso aplicativo e entre em contato conosco através de algum dos nossos contatos existente.'),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
