@@ -1,3 +1,4 @@
+import 'package:app_medidas/custom_screen_money.dart';
 import 'package:app_medidas/drinks_screen_money.dart';
 import 'package:app_medidas/food_screen_money.dart';
 import 'package:app_medidas/widgets/theme.dart';
@@ -42,7 +43,7 @@ class _CalcScreenState extends State<CalcScreen> {
       ),
       title: 'Aplicativo Pesa Preço',
       home: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: colorScheme.primary,
@@ -60,6 +61,10 @@ class _CalcScreenState extends State<CalcScreen> {
                 Tab(
                   text: "Comidas",
                   icon: Icon(Icons.account_balance),
+                ),
+                Tab(
+                  text: "Variados",
+                  icon: Icon(Icons.home_mini),
                 ),
               ],
               // indicator: ShapeDecoration(
@@ -80,6 +85,8 @@ class _CalcScreenState extends State<CalcScreen> {
                   children: [
                     DrinksScreenMoney(),
                     FoodScreenMoney(),
+                    CustomScreenMoney(),
+
                     // AlertsTestes(),
                   ],
                 ),
