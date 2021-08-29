@@ -32,7 +32,7 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 40.0),
           child: ConstrainedBox(

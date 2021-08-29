@@ -34,7 +34,7 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 40.0),
           child: ConstrainedBox(

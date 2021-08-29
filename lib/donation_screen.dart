@@ -339,7 +339,6 @@ class DonationScreen extends StatelessWidget {
                                   text: 'Banco do Brasil - ',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black,
                                   ),
                                   children: const <TextSpan>[
                                     TextSpan(
