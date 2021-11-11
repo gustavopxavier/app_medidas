@@ -29,28 +29,52 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 40.0),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SizedBox(height: 30),
-                _campoPeso(),
-                _campoPreco(),
-                _botaoCalcular(),
-              ],
-            ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        // physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 40.0),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(height: 30),
+              _campoPeso(),
+              _campoPreco(),
+              _botaoCalcular(),
+            ],
           ),
         ),
       ),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     debugShowCheckedModeBanner: false,
+  //     home: Scaffold(
+  //       resizeToAvoidBottomInset: false,
+  //       body: SingleChildScrollView(
+  //         physics: NeverScrollableScrollPhysics(),
+  //         padding: EdgeInsets.symmetric(horizontal: 40.0),
+  //         child: ConstrainedBox(
+  //           constraints: BoxConstraints(),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.stretch,
+  //             children: <Widget>[
+  //               SizedBox(height: 30),
+  //               _campoPeso(),
+  //               _campoPreco(),
+  //               _botaoCalcular(),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
 /////////////////////// WIDGETS ////////////////////////
 

@@ -25,16 +25,22 @@ class _CalcScreenState extends State<CalcScreen> {
         backgroundColor: colorScheme.background,
         buttonTheme: ButtonThemeData(
           textTheme: ButtonTextTheme.primary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
             foregroundColor: colorScheme.onSecondary),
         inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(4))),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
         cardTheme: CardTheme(
           elevation: 10.0,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
         ),
         dividerColor: Color(0xFF000000),
         textTheme: textTheme,
@@ -48,9 +54,9 @@ class _CalcScreenState extends State<CalcScreen> {
           appBar: AppBar(
             backgroundColor: colorScheme.primary,
             elevation: 0.0,
-            title: Text(
-              '',
-            ),
+            // title: Text(
+            //   '',
+            // ),
             centerTitle: true,
             bottom: TabBar(
               tabs: [
@@ -76,19 +82,23 @@ class _CalcScreenState extends State<CalcScreen> {
             ),
           ),
           backgroundColor: colorScheme.primary,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Card(
-              child: Container(
-                padding: EdgeInsets.all(7.0),
-                child: TabBarView(
-                  children: [
-                    DrinksScreenMoney(),
-                    FoodScreenMoney(),
-                    CustomScreenMoney(),
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
+              child: Card(
+                child: Container(
+                  padding: EdgeInsets.all(7.0),
+                  child: TabBarView(
+                    children: [
+                      DrinksScreenMoney(),
+                      FoodScreenMoney(),
+                      CustomScreenMoney(),
 
-                    // AlertsTestes(),
-                  ],
+                      // AlertsTestes(),
+                    ],
+                  ),
                 ),
               ),
             ),

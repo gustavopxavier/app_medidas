@@ -108,7 +108,7 @@ class ContactScreen extends StatelessWidget {
       ),
       onPressed: _launchZAP,
       label: Text('Whatsapp'),
-      icon: Icon(Icons.whatshot),
+      icon: Icon(Icons.phone_android),
     );
   }
 
@@ -129,7 +129,7 @@ class ContactScreen extends StatelessWidget {
       ),
       onPressed: _launchCalling,
       label: Text('Ligação'),
-      icon: Icon(Icons.phone),
+      icon: Icon(Icons.phone_in_talk),
     );
   }
 
@@ -171,7 +171,7 @@ class ContactScreen extends StatelessWidget {
       ),
       onPressed: _launchFACE,
       label: Text('Facebook'),
-      icon: Icon(Icons.insert_chart),
+      icon: Icon(Icons.facebook),
     );
   }
 

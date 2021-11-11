@@ -23,6 +23,7 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
   String oitocentosGramas = "";
   String umQuilo = "";
   String doisQuilos = "";
+  String result = "";
 
   @override
   void initState() {
@@ -31,24 +32,22 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 40.0),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SizedBox(height: 30),
-                _campoPeso(),
-                _campoPreco(),
-                _campoNovoTamanho(),
-                _botaoCalcular(),
-              ],
-            ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        // physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 40.0),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(height: 30),
+              _campoPeso(),
+              _campoPreco(),
+              _campoNovoTamanho(),
+              _botaoCalcular(),
+            ],
           ),
         ),
       ),
@@ -68,8 +67,8 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           // icon: Icon(Icons.liquor),
-          labelText: "Peso (g)",
-          hintText: 'Digite o peso em gramas (g)',
+          labelText: "Peso (g) ou Mililitros (ml)",
+          hintText: 'Digite o peso ou ml',
           labelStyle: _ts,
           // border: _roundedInputDecoration(),
           // isDense: true,
@@ -131,6 +130,7 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
         decoration: InputDecoration(
           // icon: Icon(Icons.liquor),
           // labelText: "Peso (g)",
+          labelText: "Peso(g) ou Mililitros(ml)",
           hintText: 'Digite o novo tamanho',
           labelStyle: _ts,
           // border: _roundedInputDecoration(),
@@ -170,6 +170,9 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
         double umGramaCustom = calcUmGramaCustom(price, weight);
 
         double resultCustom = calcCustom(umGramaCustom, custom);
+
+        result =
+            "Produto ($custom ml/g): R\$ ${resultCustom.toStringAsFixed(2)}";
 
         // double resultadoDuzentosGramas = calcDuzentosGramas(umGramaCustom);
 
@@ -212,7 +215,7 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
             title: Text("Resultado:"),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            content: Text("$resultCustom"
+            content: Text("$result"
                 // "$duzentosGramas \n\n"
                 // "$trezentosGramas \n\n"
                 // "$quinhentosGramas \n\n"

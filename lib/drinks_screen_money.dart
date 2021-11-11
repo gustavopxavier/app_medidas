@@ -28,23 +28,21 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 40.0),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SizedBox(height: 30),
-                _campoMililitros(),
-                _campoPreco(),
-                _botaoCalcular(),
-              ],
-            ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        // physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 40.0),
+        child: Container(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(height: 30),
+              _campoMililitros(),
+              _campoPreco(),
+              _botaoCalcular(),
+            ],
           ),
         ),
       ),
@@ -54,7 +52,10 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 /////////////////////// WIDGETS ////////////////////////
 
   Widget _campoMililitros() {
-    TextStyle _ts = TextStyle(fontSize: 18.0);
+    TextStyle _ts = TextStyle(
+      fontSize: 14.0,
+      color: colorScheme.primary,
+    );
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: TextFormField(
@@ -87,7 +88,7 @@ class _DrinksScreenMoneyState extends State<DrinksScreenMoney> {
 ////////////////// WIDGET CAMPO PREÇO ////////////
   Widget _campoPreco() {
     TextStyle _ts = TextStyle(
-      fontSize: 18.0,
+      fontSize: 14.0,
       color: colorScheme.primary,
     );
     var _real = 'R\$';

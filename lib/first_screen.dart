@@ -5,7 +5,7 @@ import 'package:app_medidas/start_screen.dart';
 import 'package:app_medidas/widgets/theme.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const FirstScreen());
+void main() => runApp(FirstScreen());
 
 /// This is the main application widget.
 class FirstScreen extends StatelessWidget {
@@ -15,7 +15,13 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: colorScheme,
+        primaryColor: colorScheme.primary,
+        accentColor: colorScheme.primaryVariant,
+        backgroundColor: colorScheme.background,
+      ),
       debugShowCheckedModeBanner: false,
       title: _title,
       home: MyStatefulWidget(),

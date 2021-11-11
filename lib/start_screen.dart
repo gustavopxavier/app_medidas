@@ -20,7 +20,7 @@ class _StartScreenState extends State<StartScreen> {
                 width: 100.0,
                 height: 100.0,
                 child: Image.asset(
-                  'images/balança_simples.png',
+                  'images/imagem_cabeçalho.png',
                 ),
               ),
             ),
@@ -70,12 +70,13 @@ class _StartScreenState extends State<StartScreen> {
                               Expanded(
                                 child: RichText(
                                   text: TextSpan(
-                                      style: TextStyle(
-                                        height: 1.5,
-                                        letterSpacing: 1.0,
-                                      ),
-                                      text:
-                                          'Afinal de contas, o que é o App Pesa Preço?'),
+                                    style: TextStyle(
+                                      height: 1.5,
+                                      letterSpacing: 1.0,
+                                    ),
+                                    text:
+                                        '         Afinal de contas, o que é o App Pesa Preço?',
+                                  ),
                                 ),
                               )
                             ],
@@ -94,7 +95,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'O App Pesa Preço surgiu com a necessidade de tirar dúvidas relacionadas aos preços de produtos de uma mesma marca ou não e que possuem tamanhos diferentes seja ele em milímetros ou em gramas.'),
+                                          '         O App Pesa Preço surgiu com a necessidade de tirar dúvidas relacionadas aos preços de produtos de uma mesma marca ou não e que possuem tamanhos diferentes seja ele em milímetros ou em gramas.'),
                                 ),
                               )
                             ],
@@ -111,7 +112,8 @@ class _StartScreenState extends State<StartScreen> {
                                         height: 1.5,
                                         letterSpacing: 1.0,
                                       ),
-                                      text: 'Como assim? Explique melhor.'),
+                                      text:
+                                          '         Como assim? Explique melhor.'),
                                 ),
                               )
                             ],
@@ -130,7 +132,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Vamos lá, se você vai ao supermercado e deseja comprar leite em pó, ao chegar na seção você irá se deparar com várias marcas de leite em pó.'),
+                                          '         Vamos lá, se você vai ao supermercado e deseja comprar leite em pó, ao chegar na seção você irá se deparar com várias marcas de leite em pó.'),
                                 ),
                               )
                             ],
@@ -149,7 +151,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Além das marcas, muitas das vezes você também se depara com um produto da mesma marca, porém com diferentes tamanhos. Então ao verificar o preço dos diferentes tamanhos, lhe vem a pergunta: "Será que vale mais a pena comprar o produto maior ou o menor? Qual será o mais econômico?"'),
+                                          '         Além das marcas, muitas das vezes você também se depara com um produto da mesma marca, porém com diferentes tamanhos. Então ao verificar o preço dos diferentes tamanhos, lhe vem a pergunta: "Será que vale mais a pena comprar o produto maior ou o menor? Qual será o mais econômico?"'),
                                 ),
                               )
                             ],
@@ -168,7 +170,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Você não vai pegar uma calculadora para fazer os cálculos, ou vai?'),
+                                          '         Você não vai pegar uma calculadora para fazer os cálculos, ou vai?'),
                                 ),
                               )
                             ],
@@ -187,7 +189,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Não precisa, basta usar o Aplicativo Pesa Preço.'),
+                                          '         Não precisa, basta usar o Aplicativo Pesa Preço.'),
                                 ),
                               )
                             ],
@@ -206,7 +208,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'E não se engane, muitas das vezes somos lesado achando que ao comprar um produto com uma maior quantidade, estamos economizando, onde na verdade se você comprar várias quantidades desse mesmo produto no tamanho menor, saíra mais barato do que você comprar um único produto de um tamanho maior.'),
+                                          '         E não se engane, muitas das vezes somos lesado achando que ao comprar um produto com uma maior quantidade, estamos economizando, onde na verdade se você comprar várias quantidades desse mesmo produto no tamanho menor, saíra mais barato do que você comprar um único produto de um tamanho maior.'),
                                 ),
                               )
                             ],
@@ -225,7 +227,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Posteriormente mostraremos alguns exemplos de como utilizar o aplicativo e em breve estaremos disponibilizando aqui mesmo no App uma sessão de ajuda contendo um manual de utilização.'),
+                                          '       Posteriormente mostraremos alguns exemplos de como utilizar o aplicativo e em breve estaremos disponibilizando aqui mesmo no App uma sessão de ajuda contendo um manual de utilização.'),
                                 ),
                               )
                             ],
@@ -244,7 +246,7 @@ class _StartScreenState extends State<StartScreen> {
                                         letterSpacing: 1.0,
                                       ),
                                       text:
-                                          'Caso haja dúvidas na utilização do aplicativo, vá até a sessão de "Contatos" aqui do nosso aplicativo e entre em contato conosco através de algum dos nossos contatos existente.'),
+                                          '         Caso haja dúvidas na utilização do aplicativo, vá até a sessão de "Contatos" aqui do nosso aplicativo e entre em contato conosco através de algum dos nossos contatos existente.'),
                                 ),
                               )
                             ],
