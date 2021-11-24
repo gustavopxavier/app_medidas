@@ -16,75 +16,79 @@ class ContactScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorScheme.primary,
       body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(50.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Contatos:',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
+        child: Center(
+          child: Container(
+            width: MediaQuery.of(context).size.width * .80,
+            height: MediaQuery.of(context).size.height,
+            // padding: EdgeInsets.all(50.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Contatos:',
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: contactCall(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: contactZap(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: contactInsta(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: contactFace(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: contactSite(),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: contactCall(),
+                    ),
+                  ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: contactZap(),
+                    ),
+                  ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: contactInsta(),
+                    ),
+                  ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: contactFace(),
+                    ),
+                  ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: contactSite(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

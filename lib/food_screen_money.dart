@@ -33,17 +33,21 @@ class _FoodScreenMoneyState extends State<FoodScreenMoney> {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         // physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 40.0),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              SizedBox(height: 30),
-              _campoPeso(),
-              _campoPreco(),
-              _botaoCalcular(),
-            ],
+        // padding: EdgeInsets.symmetric(horizontal: 40.0),
+        child: Center(
+          child: Container(
+            width: MediaQuery.of(context).size.width * .60,
+            height: MediaQuery.of(context).size.height * .60,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                // SizedBox(height: 30),
+                _campoPeso(),
+                _campoPreco(),
+                _botaoCalcular(),
+              ],
+            ),
           ),
         ),
       ),

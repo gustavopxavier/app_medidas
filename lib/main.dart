@@ -13,6 +13,8 @@ void main() {
   );
 }
 
+//TODO: Mudar ícone de bebidas, comidas e variados
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

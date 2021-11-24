@@ -17,17 +17,20 @@ class _StartScreenState extends State<StartScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                width: 100.0,
-                height: 100.0,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
                 child: Image.asset(
-                  'images/imagem_cabeçalho.png',
+                  'images/imagem_topo.png',
                 ),
               ),
             ),
             Expanded(
               flex: 2,
               child: Container(
-                padding: EdgeInsets.all(50.0),
+                width: MediaQuery.of(context).size.width * .80,
+                height: MediaQuery.of(context).size.height,
+
+                padding: EdgeInsets.all(10.0),
                 // color: colorScheme.primary,
                 decoration: BoxDecoration(
                     color: colorScheme.primary,

@@ -83,21 +83,25 @@ class _CalcScreenState extends State<CalcScreen> {
           ),
           backgroundColor: colorScheme.primary,
           body: Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-              ),
-              child: Card(
-                child: Container(
-                  padding: EdgeInsets.all(7.0),
-                  child: TabBarView(
-                    children: [
-                      DrinksScreenMoney(),
-                      FoodScreenMoney(),
-                      CustomScreenMoney(),
+            child: Container(
+              width: MediaQuery.of(context).size.width * .80,
+              height: MediaQuery.of(context).size.height,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                ),
+                child: Card(
+                  child: Container(
+                    padding: EdgeInsets.all(7.0),
+                    child: TabBarView(
+                      children: [
+                        DrinksScreenMoney(),
+                        FoodScreenMoney(),
+                        CustomScreenMoney(),
 
-                      // AlertsTestes(),
-                    ],
+                        // AlertsTestes(),
+                      ],
+                    ),
                   ),
                 ),
               ),

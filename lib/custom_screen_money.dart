@@ -36,18 +36,24 @@ class _CustomScreenMoneyState extends State<CustomScreenMoney> {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         // physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 40.0),
+        // padding: EdgeInsets.symmetric(horizontal: 40.0),
         child: ConstrainedBox(
           constraints: BoxConstraints(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              SizedBox(height: 30),
-              _campoPeso(),
-              _campoPreco(),
-              _campoNovoTamanho(),
-              _botaoCalcular(),
-            ],
+          child: Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width * .60,
+              height: MediaQuery.of(context).size.height * .60,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  _campoPeso(),
+                  _campoPreco(),
+                  _campoNovoTamanho(),
+                  _botaoCalcular(),
+                ],
+              ),
+            ),
           ),
         ),
       ),
